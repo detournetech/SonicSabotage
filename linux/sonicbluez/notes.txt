@@ -1,0 +1,331 @@
+https://github.com/adafruit/Adafruit_Python_BluefruitLE
+https://github.com/getsenic/gatt-python
+
+sudo rfkill unblock bluetooth
+sudo systemctl restart bluetooth
+
+http://www.lightofdawn.org/blog/?viewDetailed=00031
+
+https://github.com/ukBaz/python-bluezero/blob/master/docs/install_bluez.rst
+--experimental flag is essential
+
+
+good session:
+[11:16:07] ~/p/d/linux ❯❯❯ sudo service bluetooth restart
+[11:16:10] ~/p/d/linux ❯❯❯ sudo bluetoothctl 
+[NEW] Controller F0:D5:BF:29:BB:4C 9111 [default]
+[bluetooth]# power on
+Changing power on succeeded
+[bluetooth]# agent DisplayYesNo
+Agent registered
+[bluetooth]# default-agent
+Default agent request successful
+[bluetooth]# scan on
+Discovery started
+[CHG] Controller F0:D5:BF:29:BB:4C Discovering: yes
+[NEW] Device 4A:AD:05:A8:9F:E7 dtc
+[NEW] Device 6A:15:C2:75:7E:08 6A-15-C2-75-7E-08
+[NEW] Device 6C:CF:98:6C:96:2E 6C-CF-98-6C-96-2E
+[NEW] Device 6E:5F:8F:BB:32:F4 6E-5F-8F-BB-32-F4
+[NEW] Device 4D:6D:42:DB:30:58 4D-6D-42-DB-30-58
+[CHG] Device 6C:CF:98:6C:96:2E AdvertisingFlags: 0x00
+[CHG] Device 4D:6D:42:DB:30:58 AdvertisingFlags: 0x00
+[NEW] Device 7E:30:1E:59:9D:74 7E-30-1E-59-9D-74
+[NEW] Device 50:1E:65:CD:A4:25 50-1E-65-CD-A4-25
+[bluetooth]# scan off
+[CHG] Device 50:1E:65:CD:A4:25 RSSI is nil
+[CHG] Device 7E:30:1E:59:9D:74 RSSI is nil
+[CHG] Device 4D:6D:42:DB:30:58 RSSI is nil
+[CHG] Device 6E:5F:8F:BB:32:F4 RSSI is nil
+[CHG] Device 6C:CF:98:6C:96:2E RSSI is nil
+[CHG] Device 6A:15:C2:75:7E:08 RSSI is nil
+[CHG] Device 4A:AD:05:A8:9F:E7 TxPower is nil
+[CHG] Device 4A:AD:05:A8:9F:E7 RSSI is nil
+Discovery stopped
+[CHG] Controller F0:D5:BF:29:BB:4C Discovering: no
+[bluetooth]# connect 4A:AD:05:A8:9F:E7
+Attempting to connect to 4A:AD:05:A8:9F:E7
+[CHG] Device 4A:AD:05:A8:9F:E7 Connected: yes
+Connection successful
+[NEW] Primary Service
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0001
+	00001801-0000-1000-8000-00805f9b34fb
+	Generic Attribute Profile
+[NEW] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0001/char0002
+	00002a05-0000-1000-8000-00805f9b34fb
+	Service Changed
+[NEW] Primary Service
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028
+	000000ff-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0029
+	0000ff01-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char002b
+	0000ff02-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char002d
+	0000ff03-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char002f
+	0000ff04-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0031
+	0000ff05-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0033
+	0000ff06-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0035
+	0000ff08-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0037
+	0000ff09-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0039
+	0000ff07-0000-1000-8000-00805f9b34fb
+	Unknown
+[CHG] Device 4A:AD:05:A8:9F:E7 UUIDs: 000000ff-0000-1000-8000-00805f9b34fb
+[CHG] Device 4A:AD:05:A8:9F:E7 UUIDs: 00001800-0000-1000-8000-00805f9b34fb
+[CHG] Device 4A:AD:05:A8:9F:E7 UUIDs: 00001801-0000-1000-8000-00805f9b34fb
+[CHG] Device 4A:AD:05:A8:9F:E7 ServicesResolved: yes
+[dtc]# pair 4A:AD:05:A8:9F:E7
+Attempting to pair with 4A:AD:05:A8:9F:E7
+Request confirmation
+[agent] Confirm passkey 822380 (yes/no): yes
+[CHG] Device 24:0A:C4:83:06:5E Address: 24:0A:C4:83:06:5E
+[CHG] Device 24:0A:C4:83:06:5E Paired: yes
+Pairing successful                                                                          7
+[dtc:/service0028/char0037]# write 0x01/dev_4A_AD_05_A8_9F_E7/service0028/char0037 
+Attempting to write /org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0037
+[dtc:/service0028/char0037]# write 0x00
+Attempting to write /org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0037
+7/service0028/char00390037]# select-attribute /org/bluez/hci0/dev_4A_AD_05_A8_9F_E 
+[dtc:/service0028/char0039]# write 0x01
+Attempting to write /org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0039
+Failed to write: org.bluez.Error.NotPermitted
+7/service0028/char00350039]# select-attribute /org/bluez/hci0/dev_4A_AD_05_A8_9F_E 
+[dtc:/service0028/char0035]# write 0x01
+Attempting to write /org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0035
+[dtc:/service0028/char0035]# write 0x00
+Attempting to write /org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0035
+7/service0028/char00290035]# select-attribute /org/bluez/hci0/dev_4A_AD_05_A8_9F_E 
+[dtc:/service0028/char0029]# write 0x01
+Attempting to write /org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0029
+[dtc:/service0028/char0029]# write 0x00
+Attempting to write /org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0029
+[dtc:/service0028/char0029]# exit
+Agent unregistered
+[DEL] Controller F0:D5:BF:29:BB:4C 9111 [default]
+[DEL] Primary Servicer0029]# 
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0001
+	00001801-0000-1000-8000-00805f9b34fb
+	Generic Attribute Profile
+[DEL] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0001/char0002
+	00002a05-0000-1000-8000-00805f9b34fb
+	Service Changed
+[DEL] Primary Service
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028
+	000000ff-0000-1000-8000-00805f9b34fb
+	Unknown
+[DEL] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0029
+	0000ff01-0000-1000-8000-00805f9b34fb
+	Unknown
+[DEL] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char002b
+	0000ff02-0000-1000-8000-00805f9b34fb
+	Unknown
+[DEL] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char002d
+	0000ff03-0000-1000-8000-00805f9b34fb
+	Unknown
+[DEL] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char002f
+	0000ff04-0000-1000-8000-00805f9b34fb
+	Unknown
+[DEL] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0031
+	0000ff05-0000-1000-8000-00805f9b34fb
+	Unknown
+[DEL] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0033
+	0000ff06-0000-1000-8000-00805f9b34fb
+	Unknown
+[DEL] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0035
+	0000ff08-0000-1000-8000-00805f9b34fb
+	Unknown
+[DEL] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0037
+	0000ff09-0000-1000-8000-00805f9b34fb
+	Unknown
+[DEL] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0039
+	0000ff07-0000-1000-8000-00805f9b34fb
+	Unknown
+[11:21:28] ~/p/d/linux ❯❯❯ sudo bluetoothctl 
+[NEW] Controller F0:D5:BF:29:BB:4C 9111 [default]
+[NEW] Device 24:0A:C4:83:06:5E dtc
+[NEW] Primary Service
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028
+	000000ff-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0039
+	0000ff07-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0037
+	0000ff09-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0035
+	0000ff08-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0033
+	0000ff06-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0031
+	0000ff05-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char002f
+	0000ff04-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char002d
+	0000ff03-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char002b
+	0000ff02-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0029
+	0000ff01-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Primary Service
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0001
+	00001801-0000-1000-8000-00805f9b34fb
+	Generic Attribute Profile
+[NEW] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0001/char0002
+	00002a05-0000-1000-8000-00805f9b34fb
+	Service Changed
+[dtc]# help
+Available commands:
+  list                       List available controllers
+  show [ctrl]                Controller information
+  select <ctrl>              Select default controller
+  devices                    List available devices
+  paired-devices             List paired devices
+  power <on/off>             Set controller power
+  pairable <on/off>          Set controller pairable mode
+  discoverable <on/off>      Set controller discoverable mode
+  agent <on/off/capability>  Enable/disable agent with given capability
+  default-agent              Set agent as the default one
+  advertise <on/off/type>    Enable/disable advertising with given type
+  set-advertise-uuids [uuid1 uuid2 ...] Set advertise uuids
+  set-advertise-service [uuid][data=[xx xx ...] Set advertise service data
+  set-advertise-manufacturer [id][data=[xx xx ...] Set advertise manufacturer data
+  set-advertise-tx-power <on/off> Enable/disable TX power to be advertised
+  set-scan-filter-uuids [uuid1 uuid2 ...] Set scan filter uuids
+  set-scan-filter-rssi [rssi] Set scan filter rssi, and clears pathloss
+  set-scan-filter-pathloss [pathloss] Set scan filter pathloss, and clears rssi
+  set-scan-filter-transport [transport] Set scan filter transport
+  set-scan-filter-clear      Clears discovery filter.
+  scan <on/off>              Scan for devices
+  info [dev]                 Device information
+  pair [dev]                 Pair with device
+  trust [dev]                Trust device
+  untrust [dev]              Untrust device
+  block [dev]                Block device
+  unblock [dev]              Unblock device
+  remove <dev>               Remove device
+  connect <dev>              Connect device
+  disconnect [dev]           Disconnect device
+  list-attributes [dev]      List attributes
+  set-alias <alias>          Set device alias
+  select-attribute <attribute> Select attribute
+  attribute-info [attribute] Select attribute
+  read                       Read attribute value
+  write <data=[xx xx ...]>   Write attribute value
+  notify <on/off>            Notify attribute value
+  register-profile <UUID ...> Register profile to connect
+  unregister-profile         Unregister profile
+  version                    Display version
+  quit                       Quit program
+[dtc]# remove 24:0A:C4:83:06:5E 
+[CHG] Device 24:0A:C4:83:06:5E ServicesResolved: no
+Device has been removed
+[CHG] Device 24:0A:C4:83:06:5E Connected: no
+[DEL] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0001/char0002
+	00002a05-0000-1000-8000-00805f9b34fb
+	Service Changed
+[DEL] Primary Service
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0001
+	00001801-0000-1000-8000-00805f9b34fb
+	Generic Attribute Profile
+[DEL] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0029
+	0000ff01-0000-1000-8000-00805f9b34fb
+	Unknown
+[DEL] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char002b
+	0000ff02-0000-1000-8000-00805f9b34fb
+	Unknown
+[DEL] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char002d
+	0000ff03-0000-1000-8000-00805f9b34fb
+	Unknown
+[DEL] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char002f
+	0000ff04-0000-1000-8000-00805f9b34fb
+	Unknown
+[DEL] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0031
+	0000ff05-0000-1000-8000-00805f9b34fb
+	Unknown
+[DEL] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0033
+	0000ff06-0000-1000-8000-00805f9b34fb
+	Unknown
+[DEL] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0035
+	0000ff08-0000-1000-8000-00805f9b34fb
+	Unknown
+[DEL] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0037
+	0000ff09-0000-1000-8000-00805f9b34fb
+	Unknown
+[DEL] Characteristic
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028/char0039
+	0000ff07-0000-1000-8000-00805f9b34fb
+	Unknown
+[DEL] Primary Service
+	/org/bluez/hci0/dev_4A_AD_05_A8_9F_E7/service0028
+	000000ff-0000-1000-8000-00805f9b34fb
+	Unknown
+[DEL] Device 24:0A:C4:83:06:5E dtc
+[bluetooth]# devices
+[bluetooth]# list
+Controller F0:D5:BF:29:BB:4C 9111 [default]
+[bluetooth]# exit
+[DEL] Controller F0:D5:BF:29:BB:4C 9111 [default]
+[11:22:28] ~/p/d/linux ❯❯❯ 
+

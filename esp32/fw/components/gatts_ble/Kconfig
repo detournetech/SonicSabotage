@@ -1,0 +1,12 @@
+config BLE_GATTS_SECURITY
+    bool "Enhanced BLE security"
+    default "n"
+    help
+        Use Numeric Comparison instead of Just Works. Limited support.
+
+config NUMERIC_COMPARISON_EZ_DEV
+    bool "Unconditional NC confirmation"
+    default "n"
+    help
+        Unconditionally accept Numeric Comparison requests on esp32 (for dev)
+

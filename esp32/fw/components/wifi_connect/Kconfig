@@ -1,0 +1,6 @@
+config OTA_CAN_WRITE_FLASH
+    bool "Enable OTA partition writes"
+    default "y"
+    help
+        OTA can write fw to flash. Can be disabled for testing
+

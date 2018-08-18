@@ -1,0 +1,100 @@
+<!--
+  ~ Copyright (c) 2015, Nordic Semiconductor
+  ~ All rights reserved.
+  ~
+  ~ Redistribution and use in source and binary forms, with or without
+  ~ modification, are permitted provided that the following conditions are met:
+  ~
+  ~ * Redistributions of source code must retain the above copyright notice, this
+  ~   list of conditions and the following disclaimer.
+  ~
+  ~ * Redistributions in binary form must reproduce the above copyright notice,
+  ~   this list of conditions and the following disclaimer in the documentation
+  ~   and/or other materials provided with the distribution.
+  ~
+  ~ * Neither the name of copyright holder nor the names of its
+  ~   contributors may be used to endorse or promote products derived from
+  ~   this software without specific prior written permission.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  ~ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  ~ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  ~ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  ~ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  ~ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  ~ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  ~ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  ~ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  ~ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+
+<resources>
+	<string name="app_name">Sonic Sabotage</string>
+	<string name="feature_name">DTC</string>
+
+	<string name="title">@string/app_name</string>
+
+	<string name="unknown_device">Unknown Device</string>
+	<string name="turn_on">On</string>
+	<string name="turn_off">Off</string>
+	<string name="title_led_state">Buzz</string>
+	<string name="title_button_state">Button</string>
+	<string name="state">State</string>
+	<string name="button_pressed">PRESSED</string>
+	<string name="button_released">RELEASED</string>
+	<string name="button_unknown">UNKNOWN</string>
+	<string name="led_summary"></string>
+	<string name="button_summary"></string>
+
+	<string name="fixedint_summary">Buzz periodically</string>
+	<string name="title_fixedint_state">Fixed Interval</string>
+
+	<string name="randomint_summary">Buzz randomly</string>
+	<string name="title_randomint_state">Random Interval</string>
+
+	<string name="rssithresh_summary">Buzz when signal is below threshold</string>
+	<string name="title_rssithresh_state">RSSI trigger</string>
+	<string name="rssival_text">0%</string>
+
+	<string name="solarthresh_summary">Buzz when brightness is below threshold</string>
+	<string name="title_solarthresh_state">Solar trigger</string>
+	<string name="solarval_text">0%</string>
+
+	<string name="update_summary">Download firmware update, OTA flash to device</string>
+	<string name="title_update_state">Update firmware</string>
+
+	<string name="dl_button">Download</string>
+	<string name="ch_button">From File</string>
+	<string name="ul_button">OTA Flash</string>
+
+	<string name="fname_text">File:</string>
+	<string name="fnamesha_text">sha256:</string>
+	<string name="fnamesize_text">Size:</string>
+
+
+	<string name="downloading">Downloading, please wait...</string>
+
+	<string name="location_permission_title">LOCATION PERMISSION REQUIRED</string>
+	<string name="location_permission_info">From Android 6.0 Marshmallow onwards the application requires Location permission in order to scan for Bluetooth Low Energy devices.
+      \n\nThis is because Bluetooth LE beacons, for example iBeacons or Eddystone, may be used to determine the phone\'s and user\'s location. This app will not use this information in any way.</string>
+	<string name="location_permission_action">Grant permission</string>
+	<string name="location_permission_settings">Settings</string>
+
+	<string name="bluetooth_disabled_title">BLUETOOTH DISABLED</string>
+	<string name="bluetooth_disabled_info">The Bluetooth adapter is turned off. Click the button below to enable it.</string>
+	<string name="bluetooth_disabled_action">Enable</string>
+
+	<string name="blinky_guide_title">CAN\'T SEE YOUR DEVICE?</string>
+	<string name="blinky_guide_info">1. Make sure the device is <b>turned on</b> and is connected to a power source.</string>
+	<string name="blinky_guide_location_info">3. Location is turned off. Some Android phones require it enabled in order to scan for Bluetooth LE devices.
+		If you are sure your device is advertising and it doesn\'t show up here, click the button below to enable Location.</string>
+	<string name="blinky_guide_location_action">Enable</string>
+
+	<string name="state_scanning">Scanning…</string>
+	<string name="state_connecting">Connecting…</string>
+	<string name="state_discovering_services">Discovering services…</string>
+	<string name="state_initializing">Initializing…</string>
+	<string name="state_discovering_services_completed">%s ready</string>
+	<string name="state_not_supported">Device does not have required services.</string>
+	<string name="state_disconnected">Device disconnected.</string>
+</resources>

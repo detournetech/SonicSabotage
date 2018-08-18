@@ -1,0 +1,52 @@
+make maintainer-clean
+autoreconf -fi
+./configure
+make
+
+sudo ./sonic
+
+# goals
+* nice graph for rssi/solar stats
+* read/write all avail characteristics
+* ota update
+
+# nice goal
+* smooth connect / disconnect with bonds that endure
+
+# nice to have
+* no extraneous output (unless verbose requested)
+* only show dtc devices (from scan and from memory), prompt to choose if multiple
+* only use default adapter, choose if multiple
+* no extra commands, addresses are hidden
+
+
+if having trouble getting Confirm passkey dialog, restart bluetooth
+
+# scan
+
+# connect
+
+# buzz on
+
+# buzz off
+
+# rssistats
+
+# solarstats
+
+# solarmin 100
+
+# rssimin 100
+
+# fixedint 100
+
+# randint 100
+
+# ota [file]
+
+# disconnect
+
+remote rssi read scu
+CONF_EVT?
+mode check
+

@@ -1,0 +1,65 @@
+Info: Backing up file "/home/jtm/proj/dropbuzzer/pcb/rev2/sym-lib-table" to file "/home/jtm/proj/dropbuzzer/pcb/rev2/rescue-backup/sym-lib-table-2018-08-18-15-53-16".
+Info: Backing up file "/home/jtm/proj/dropbuzzer/pcb/rev2/dropbuzzer.sch" to file "/home/jtm/proj/dropbuzzer/pcb/rev2/rescue-backup/dropbuzzer-2018-08-18-15-53-16.sch".
+Info: Backing up file "/home/jtm/proj/dropbuzzer/pcb/rev2/dropbuzzer.pro" to file "/home/jtm/proj/dropbuzzer/pcb/rev2/rescue-backup/dropbuzzer-2018-08-18-15-53-16.pro".
+Info: Backing up file "/home/jtm/proj/dropbuzzer/pcb/rev2/dropbuzzer-cache.lib" to file "/home/jtm/proj/dropbuzzer/pcb/rev2/rescue-backup/dropbuzzer-cache-2018-08-18-15-53-16.lib".
+Info: Backing up file "/home/jtm/proj/dropbuzzer/pcb/rev2/dropbuzzer-rescue.lib" to file "/home/jtm/proj/dropbuzzer/pcb/rev2/rescue-backup/dropbuzzer-rescue-2018-08-18-15-53-16.lib".
+Info: Backing up file "/home/jtm/proj/dropbuzzer/pcb/rev2/dropbuzzer-rescue.dcm" to file "/home/jtm/proj/dropbuzzer/pcb/rev2/rescue-backup/dropbuzzer-rescue-2018-08-18-15-53-16.dcm".
+Info: Adding library "dropbuzzer-rescue", file "${KIPRJMOD}/dropbuzzer-rescue.lib" to project symbol library table.
+Info: Adding library "power", file "${KICAD_SYMBOL_DIR}/power.lib" to project symbol library table.
+Info: Adding library "74xx", file "${KICAD_SYMBOL_DIR}/74xx.lib" to project symbol library table.
+Info: Adding library "ESP32-footprints-Shem-Lib", file "${KIPRJMOD}/ESP32-footprints-Shem-Lib.lib" to project symbol library table.
+Info: Adding library "espressif-xess", file "${KIPRJMOD}/espressif-xess.lib" to project symbol library table.
+Symbol "ESP32-WROOM" mapped to symbol library "ESP32-footprints-Shem-Lib".
+Symbol "Conn_02x04_Counter_Clockwise" mapped to symbol library "dropbuzzer-rescue".
+Symbol "C" mapped to symbol library "dropbuzzer-rescue".
+Symbol "C" mapped to symbol library "dropbuzzer-rescue".
+Symbol "GND" mapped to symbol library "power".
+Symbol "GND" mapped to symbol library "power".
+Symbol "C" mapped to symbol library "dropbuzzer-rescue".
+Symbol "VDD" mapped to symbol library "power".
+Symbol "VDD" mapped to symbol library "power".
+Symbol "R" mapped to symbol library "dropbuzzer-rescue".
+Symbol "R" mapped to symbol library "dropbuzzer-rescue".
+Symbol "R" mapped to symbol library "dropbuzzer-rescue".
+Symbol "GND" mapped to symbol library "power".
+Symbol "VDD" mapped to symbol library "power".
+Symbol "NCP1117DT12G" mapped to symbol library "dropbuzzer-rescue".
+Symbol "GND" mapped to symbol library "power".
+Symbol "C" mapped to symbol library "dropbuzzer-rescue".
+Symbol "GND" mapped to symbol library "power".
+Symbol "VDD" mapped to symbol library "power".
+Symbol "C" mapped to symbol library "dropbuzzer-rescue".
+Symbol "GND" mapped to symbol library "power".
+Symbol "CONN_01X02" mapped to symbol library "dropbuzzer-rescue".
+Symbol "GND" mapped to symbol library "power".
+Symbol "GND" mapped to symbol library "power".
+Symbol "2N2219" mapped to symbol library "dropbuzzer-rescue".
+Symbol "Buzzer" mapped to symbol library "dropbuzzer-rescue".
+Symbol "R" mapped to symbol library "dropbuzzer-rescue".
+Symbol "GND" mapped to symbol library "power".
+Symbol "+BATT" mapped to symbol library "power".
+Symbol "+BATT" mapped to symbol library "power".
+Symbol "+BATT" mapped to symbol library "power".
+Symbol "LED_ARGB" mapped to symbol library "dropbuzzer-rescue".
+Symbol "R" mapped to symbol library "dropbuzzer-rescue".
+Symbol "R" mapped to symbol library "dropbuzzer-rescue".
+Symbol "R" mapped to symbol library "dropbuzzer-rescue".
+Symbol "VDD" mapped to symbol library "power".
+Symbol "Jumper" mapped to symbol library "dropbuzzer-rescue".
+Symbol "GND" mapped to symbol library "power".
+Symbol "Jumper" mapped to symbol library "dropbuzzer-rescue".
+Symbol "GND" mapped to symbol library "power".
+Symbol "GND" mapped to symbol library "power".
+Symbol "GND" mapped to symbol library "power".
+Symbol "R_PHOTO" mapped to symbol library "dropbuzzer-rescue".
+Symbol "VDD" mapped to symbol library "power".
+Symbol "R" mapped to symbol library "dropbuzzer-rescue".
+Symbol "GND" mapped to symbol library "power".
+Symbol "GND" mapped to symbol library "power".
+Symbol "C" mapped to symbol library "dropbuzzer-rescue".
+Symbol "C" mapped to symbol library "dropbuzzer-rescue".
+Symbol "C" mapped to symbol library "dropbuzzer-rescue".
+Symbol "GND" mapped to symbol library "power".
+Symbol "Jumper_NC_Dual" mapped to symbol library "dropbuzzer-rescue".
+Symbol "Screw_Terminal_1x02" mapped to symbol library "dropbuzzer-rescue".
+Info: Symbol library table mapping complete!

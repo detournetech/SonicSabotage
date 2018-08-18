@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2015, Nordic Semiconductor
+  ~ All rights reserved.
+  ~
+  ~ Redistribution and use in source and binary forms, with or without
+  ~ modification, are permitted provided that the following conditions are met:
+  ~
+  ~ * Redistributions of source code must retain the above copyright notice, this
+  ~   list of conditions and the following disclaimer.
+  ~
+  ~ * Redistributions in binary form must reproduce the above copyright notice,
+  ~   this list of conditions and the following disclaimer in the documentation
+  ~   and/or other materials provided with the distribution.
+  ~
+  ~ * Neither the name of copyright holder nor the names of its
+  ~   contributors may be used to endorse or promote products derived from
+  ~   this software without specific prior written permission.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  ~ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  ~ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  ~ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  ~ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  ~ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  ~ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  ~ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  ~ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  ~ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".BlinkyActivity"
+	tools:ignore="ContentDescription">
+
+	<android.support.design.widget.AppBarLayout
+		android:id="@+id/appbar_layout"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:theme="@style/AppTheme.AppBarOverlay">
+
+		<android.support.v7.widget.Toolbar
+			android:id="@+id/toolbar"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"
+			android:background="?attr/colorPrimary"
+			app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+	</android.support.design.widget.AppBarLayout>
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginBottom="8dp"
+		android:src="@drawable/background_title"/>
+
+	<ScrollView
+		android:id="@+id/device_container"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_below="@+id/appbar_layout"
+		android:visibility="gone">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<android.support.v7.widget.CardView
+				android:id="@+id/led_card"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="@dimen/activity_horizontal_margin"
+				android:layout_marginBottom="@dimen/activity_horizontal_margin"
+				android:background="@android:color/white"
+				app:cardElevation="1dp">
+
+				<android.support.constraint.ConstraintLayout
+					android:id="@+id/led_container"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
+
+					<android.support.v7.widget.Toolbar
+						android:id="@+id/led_tool_bar"
+						android:layout_width="0dp"
+						android:layout_height="?actionBarSize"
+						app:layout_constraintLeft_toLeftOf="parent"
+						app:layout_constraintRight_toRightOf="parent"
+						app:layout_constraintTop_toTopOf="parent"
+						app:logo="@drawable/ic_radio_button_checked"
+						app:title="@string/title_led_state"
+						app:titleMarginStart="@dimen/toolbar_title_margin"/>
+
+					<!--TextView
+						android:id="@+id/led_summary"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:paddingEnd="@dimen/activity_horizontal_margin"
+						android:paddingStart="@dimen/activity_horizontal_margin"
+						android:text="@string/led_summary"
+						app:layout_constraintLeft_toLeftOf="parent"
+						app:layout_constraintTop_toBottomOf="@+id/led_tool_bar"/-->
+
+					<TextView
+						android:id="@+id/led_state"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:padding="@dimen/activity_horizontal_margin"
+						android:text="@string/turn_off"
+						app:layout_constraintLeft_toLeftOf="parent"
+						app:layout_constraintTop_toBottomOf="@+id/led_tool_bar"/>
+
+					<Switch
+						android:id="@+id/led_switch"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:padding="@dimen/activity_horizontal_margin"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintTop_toBottomOf="@+id/led_tool_bar"/>
+
+				</android.support.constraint.ConstraintLayout>
+			</android.support.v7.widget.CardView>
+
+			<android.support.v7.widget.CardView
+				android:id="@+id/fixedint_card"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="@dimen/activity_horizontal_margin"
+				android:layout_marginBottom="@dimen/activity_horizontal_margin"
+				android:background="@android:color/white"
+				app:cardElevation="1dp">
+
+				<android.support.constraint.ConstraintLayout
+					android:id="@+id/fixedint_container"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
+
+					<android.support.v7.widget.Toolbar
+						android:id="@+id/fixedint_tool_bar"
+						android:layout_width="0dp"
+						android:layout_height="?actionBarSize"
+						app:layout_constraintLeft_toLeftOf="parent"
+						app:layout_constraintRight_toRightOf="parent"
+						app:layout_constraintTop_toTopOf="parent"
+						app:logo="@drawable/ic_radio_button_checked"
+						app:title="@string/title_fixedint_state"
+						app:titleMarginStart="@dimen/toolbar_title_margin"/>
+
+					<TextView
+						android:id="@+id/fixedint_text"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:paddingEnd="@dimen/activity_horizontal_margin"
+						android:paddingStart="@dimen/activity_horizontal_margin"
+						android:text="@string/fixedint_summary"
+						app:layout_constraintLeft_toLeftOf="parent"
+						app:layout_constraintTop_toBottomOf="@+id/fixedint_tool_bar"/>
+
+					<SeekBar android:id="@+id/fixedint_seekbar"
+						android:layout_width="300dp"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="26dp"
+						android:max="100"
+						app:layout_constraintLeft_toLeftOf="parent"
+						app:layout_constraintTop_toBottomOf="@+id/fixedint_text"/>
+
+					<!--TextView
+						android:id="@+id/fixedint_state"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:padding="@dimen/activity_horizontal_margin"
+						android:text="@string/turn_off"
+						app:layout_constraintLeft_toLeftOf="parent"
+						app:layout_constraintTop_toBottomOf="@+id/fixedint_seekbar"/>
+
+					<Switch
+						android:id="@+id/fixedint_switch"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:padding="@dimen/activity_horizontal_margin"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintTop_toBottomOf="@+id/fixedint_seekbar"/-->
+
+				</android.support.constraint.ConstraintLayout>
+			</android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/randomint_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+				android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                android:background="@android:color/white"
+                app:cardElevation="1dp">
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/randomint_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/randomint_tool_bar"
+                        android:layout_width="0dp"
+                        android:layout_height="?actionBarSize"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:logo="@drawable/ic_radio_button_checked"
+                        app:title="@string/title_randomint_state"
+                        app:titleMarginStart="@dimen/toolbar_title_margin"/>
+
+                    <TextView
+                        android:id="@+id/randomint_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="@dimen/activity_horizontal_margin"
+                        android:paddingStart="@dimen/activity_horizontal_margin"
+                        android:text="@string/randomint_summary"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/randomint_tool_bar"/>
+
+                    <SeekBar android:id="@+id/randomint_seekbar"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="26dp"
+                        android:max="100"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/randomint_text"/>
+
+                    <!--TextView
+                        android:id="@+id/randomint_state"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/activity_horizontal_margin"
+                        android:text="@string/turn_off"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/randomint_seekbar"/>
+
+                    <Switch
+                        android:id="@+id/randomint_switch"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/activity_horizontal_margin"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/randomint_seekbar"/-->
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/rssithresh_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+				android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                android:background="@android:color/white"
+                app:cardElevation="1dp">
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/rssithresh_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+					<TextView
+						android:id="@+id/rssival_view"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="@string/rssival_text"
+						android:textAlignment="textEnd"
+						android:textSize="36sp"
+						app:layout_constraintEnd_toEndOf="parent" />
+
+					<android.support.v7.widget.Toolbar
+                        android:id="@+id/rssithresh_tool_bar"
+                        android:layout_width="0dp"
+                        android:layout_height="?actionBarSize"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:logo="@drawable/ic_radio_button_checked"
+                        app:title="@string/title_rssithresh_state"
+                        app:titleMarginStart="@dimen/toolbar_title_margin"/>
+
+                    <TextView
+                        android:id="@+id/rssithresh_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="@dimen/activity_horizontal_margin"
+                        android:paddingStart="@dimen/activity_horizontal_margin"
+                        android:text="@string/rssithresh_summary"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rssithresh_tool_bar"/>
+
+                    <SeekBar android:id="@+id/rssithresh_seekbar"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="26dp"
+                        android:max="100"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rssithresh_text"/>
+
+                    <!--TextView
+                        android:id="@+id/rssithresh_state"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/activity_horizontal_margin"
+                        android:text="@string/turn_off"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rssithresh_seekbar"/>
+
+                    <Switch
+                        android:id="@+id/rssithresh_switch"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/activity_horizontal_margin"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rssithresh_seekbar"/-->
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/solarthresh_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+				android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                android:background="@android:color/white"
+                app:cardElevation="1dp">
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/solarthresh_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+					<TextView
+						android:id="@+id/solarval_view"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="@string/solarval_text"
+						android:textAlignment="textEnd"
+						android:textSize="36sp"
+						app:layout_constraintEnd_toEndOf="parent" />
+
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/solarthresh_tool_bar"
+                        android:layout_width="0dp"
+                        android:layout_height="?actionBarSize"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:logo="@drawable/ic_radio_button_checked"
+                        app:title="@string/title_solarthresh_state"
+                        app:titleMarginStart="@dimen/toolbar_title_margin"/>
+
+
+
+                    <TextView
+                        android:id="@+id/solarthresh_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="@dimen/activity_horizontal_margin"
+                        android:paddingStart="@dimen/activity_horizontal_margin"
+                        android:text="@string/solarthresh_summary"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/solarthresh_tool_bar"/>
+
+                    <SeekBar android:id="@+id/solarthresh_seekbar"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="26dp"
+                        android:max="100"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/solarthresh_text"/>
+
+                    <!--TextView
+                        android:id="@+id/solarthresh_state"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/activity_horizontal_margin"
+                        android:text="@string/turn_off"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/solarthresh_seekbar"/>
+
+                    <Switch
+                        android:id="@+id/solarthresh_switch"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/activity_horizontal_margin"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/solarthresh_seekbar"/-->
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+			<android.support.v7.widget.CardView
+				android:id="@+id/update_card"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="@dimen/activity_horizontal_margin"
+				android:layout_marginBottom="@dimen/activity_horizontal_margin"
+				android:background="@android:color/white"
+				app:cardElevation="1dp">
+
+				<android.support.constraint.ConstraintLayout
+					android:id="@+id/update_container"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
+
+					<android.support.constraint.Guideline
+						android:id="@+id/guideline"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						app:layout_constraintGuide_percent="0.33"
+						android:orientation="vertical" />
+
+					<android.support.constraint.Guideline
+						android:id="@+id/guideline2"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						app:layout_constraintGuide_percent="0.66"
+						android:orientation="vertical" />
+
+					<android.support.v7.widget.Toolbar
+						android:id="@+id/update_tool_bar"
+						android:layout_width="0dp"
+						android:layout_height="?actionBarSize"
+						app:layout_constraintLeft_toLeftOf="parent"
+						app:layout_constraintRight_toRightOf="parent"
+						app:layout_constraintTop_toTopOf="parent"
+						app:logo="@drawable/ic_radio_button_checked"
+						app:title="@string/title_update_state"
+						app:titleMarginStart="@dimen/toolbar_title_margin"/>
+
+					<ImageView
+						android:id="@+id/download_status"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:tint="@android:color/white"
+						android:src="@android:drawable/btn_star_big_off"
+						/>
+
+					<TextView
+						android:id="@+id/update_text"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:paddingEnd="@dimen/activity_horizontal_margin"
+						android:paddingStart="@dimen/activity_horizontal_margin"
+						android:text="@string/update_summary"
+						app:layout_constraintLeft_toLeftOf="parent"
+						app:layout_constraintTop_toBottomOf="@+id/update_tool_bar"/>
+
+					<TextView
+						android:id="@+id/fname_text"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:paddingEnd="@dimen/activity_horizontal_margin"
+						android:paddingStart="@dimen/activity_horizontal_margin"
+						android:text="@string/fname_text"
+						app:layout_constraintLeft_toLeftOf="parent"
+						app:layout_constraintTop_toBottomOf="@+id/update_text"/>
+
+					<TextView
+						android:id="@+id/fname_size"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:paddingEnd="@dimen/activity_horizontal_margin"
+						android:paddingStart="@dimen/activity_horizontal_margin"
+						android:text="@string/fnamesize_text"
+						app:layout_constraintLeft_toLeftOf="parent"
+						app:layout_constraintTop_toBottomOf="@+id/fname_text"/>
+
+					<TextView
+						android:id="@+id/fnamesha_text"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:paddingEnd="@dimen/activity_horizontal_margin"
+						android:paddingStart="@dimen/activity_horizontal_margin"
+						android:text="@string/fnamesha_text"
+						app:layout_constraintLeft_toLeftOf="parent"
+						app:layout_constraintTop_toBottomOf="@+id/fname_size"/>
+
+                    <Button
+                        android:id="@+id/button_id"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/dl_button"
+                        app:layout_constraintTop_toBottomOf="@+id/fnamesha_text"
+                        app:layout_constraintHorizontal_chainStyle="spread"
+                        app:layout_constraintRight_toLeftOf="@+id/guideline" />
+
+					<Button
+						android:id="@+id/button_id3"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="8dp"
+						android:text="@string/ch_button"
+						app:layout_constraintTop_toBottomOf="@+id/fnamesha_text"
+						app:layout_constraintHorizontal_chainStyle="spread"
+						app:layout_constraintLeft_toRightOf="@+id/guideline"
+						app:layout_constraintRight_toLeftOf="@+id/guideline2" />
+
+                    <Button
+                        android:id="@+id/button_id2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/ul_button"
+                        app:layout_constraintTop_toBottomOf="@+id/fnamesha_text"
+                        app:layout_constraintLeft_toRightOf="@+id/guideline2" />
+
+
+				</android.support.constraint.ConstraintLayout>
+			</android.support.v7.widget.CardView>
+
+			<!--android.support.v7.widget.CardView
+				android:id="@+id/button_card"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="@dimen/activity_horizontal_margin"
+				android:layout_marginTop="@dimen/activity_horizontal_margin"
+				android:background="@android:color/white"
+				app:cardElevation="1dp">
+
+				<android.support.constraint.ConstraintLayout
+					android:id="@+id/button_container"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
+
+					<android.support.v7.widget.Toolbar
+						android:id="@+id/button_tool_bar"
+						android:layout_width="0dp"
+						android:layout_height="?actionBarSize"
+						app:layout_constraintLeft_toLeftOf="parent"
+						app:layout_constraintRight_toRightOf="parent"
+						app:layout_constraintTop_toTopOf="parent"
+						app:logo="@drawable/ic_radio_button_checked"
+						app:title="@string/title_button_state"
+						app:titleMarginStart="@dimen/toolbar_title_margin"
+						app:titleTextColor="@android:color/black"/>
+
+					<TextView
+						android:id="@+id/button_summary"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:paddingEnd="@dimen/activity_horizontal_margin"
+						android:paddingStart="@dimen/activity_horizontal_margin"
+						android:text="@string/button_summary"
+						app:layout_constraintLeft_toLeftOf="parent"
+						app:layout_constraintTop_toBottomOf="@+id/button_tool_bar"/>
+
+					<TextView
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:padding="@dimen/activity_horizontal_margin"
+						android:text="@string/state"
+						app:layout_constraintLeft_toLeftOf="parent"
+						app:layout_constraintTop_toBottomOf="@+id/button_summary"/>
+
+					<TextView
+						android:id="@+id/button_state"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:padding="@dimen/activity_horizontal_margin"
+						android:text="@string/button_unknown"
+						android:textStyle="bold"
+						app:layout_constraintRight_toRightOf="parent"
+						app:layout_constraintTop_toBottomOf="@+id/button_summary"/>
+				</android.support.constraint.ConstraintLayout>
+			</android.support.v7.widget.CardView-->
+		</LinearLayout>
+	</ScrollView>
+
+	<LinearLayout
+		android:id="@+id/progress_container"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"
+		android:gravity="center_horizontal"
+		android:orientation="vertical"
+		android:padding="@dimen/activity_horizontal_margin">
+
+		<TextView
+			android:id="@+id/connection_state"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_horizontal"
+			android:textSize="16sp"
+			tools:text="@string/state_connecting"/>
+
+		<ProgressBar
+			android:id="@+id/progress_bar"
+			style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+			android:layout_width="250dp"
+			android:layout_height="wrap_content"
+			android:indeterminate="true"/>
+	</LinearLayout>
+</RelativeLayout>

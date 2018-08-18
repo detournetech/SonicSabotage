@@ -1,0 +1,7 @@
+(sym_lib_table
+  (lib (name dropbuzzer-rescue)(type Legacy)(uri ${KIPRJMOD}/dropbuzzer-rescue.lib)(options "")(descr ""))
+  (lib (name power)(type Legacy)(uri ${KICAD_SYMBOL_DIR}/power.lib)(options "")(descr ""))
+  (lib (name 74xx)(type Legacy)(uri ${KICAD_SYMBOL_DIR}/74xx.lib)(options "")(descr ""))
+  (lib (name ESP32-footprints-Shem-Lib)(type Legacy)(uri ${KIPRJMOD}/ESP32-footprints-Shem-Lib.lib)(options "")(descr ""))
+  (lib (name espressif-xess)(type Legacy)(uri ${KIPRJMOD}/espressif-xess.lib)(options "")(descr ""))
+)
