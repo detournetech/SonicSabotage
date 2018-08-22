@@ -79,7 +79,7 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name=".BlinkyActivity"
+			android:name=".DetourneActivity"
 			android:launchMode="singleTop">
 		</activity>
 
