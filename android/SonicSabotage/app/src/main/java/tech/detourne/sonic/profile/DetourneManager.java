@@ -42,7 +42,7 @@ public class DetourneManager extends BleManager<DetourneManagerCallbacks> {
 	// Sonic Sabotage Service UUID
 	public final static UUID LBS_UUID_SERVICE = UUID.fromString("000000ff-0000-1000-8000-00805f9b34fb");
 	// set mode of device
-	public final static UUID LBS_UUID_TRIG = UUID.fromString("0000ff02-0000-1000-8000-00805f9b34fb");
+	public final static UUID LBS_UUID_MODE = UUID.fromString("0000ff02-0000-1000-8000-00805f9b34fb");
 	// set beep on or off
 	public final static UUID LBS_UUID_BUZZ_CHAR = UUID.fromString("0000ff01-0000-1000-8000-00805f9b34fb");
 
@@ -112,7 +112,7 @@ public class DetourneManager extends BleManager<DetourneManagerCallbacks> {
 			final BluetoothGattService service = gatt.getService(LBS_UUID_SERVICE);
 			if (service != null) {
 				mLedCharacteristic = service.getCharacteristic(LBS_UUID_BUZZ_CHAR);
-				mModeCharacteristic = service.getCharacteristic(LBS_UUID_TRIG);
+				mModeCharacteristic = service.getCharacteristic(LBS_UUID_MODE);
 				mRSSIMinCharacteristic = service.getCharacteristic(LBS_UUID_RSSIMIN_CHAR);
 				mSolarMinCharacteristic = service.getCharacteristic(LBS_UUID_SOLARMIN_CHAR);
 				mFixedIntCharacteristic = service.getCharacteristic(LBS_UUID_FIXEDINT_CHAR);
@@ -259,6 +259,11 @@ public class DetourneManager extends BleManager<DetourneManagerCallbacks> {
 			mSolarMinCharacteristic.setValue(command);
 			writeCharacteristic(mSolarMinCharacteristic);
 			Log.i("writing a char", " *solarmin* ");
+		}
+		else if(uuid.equals(mModeCharacteristic.getUuid())) {
+			mModeCharacteristic.setValue(command);
+			writeCharacteristic(mModeCharacteristic);
+			Log.i("writing a char", " *mode* ");
 		}
 
 		//mLedCharacteristic.setValue(command);

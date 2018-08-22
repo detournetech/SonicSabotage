@@ -249,14 +249,17 @@ public class DetourneActivity extends AppCompatActivity implements OnTaskComplet
 		fixedInt.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
 			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-				viewModel.updateFixedIntVal((byte)progress);
+				byte val = (byte)progress;
+				//put in loop mode if slider is left somewhere > 0, idle mode if left at 0
+				byte newMode = (val == (byte)0x00) ? (byte)0x00 : (byte)0x02;
+				viewModel.updateMode(newMode); //mode loop
+				viewModel.updateFixedIntVal(val);
 			}
 
-			public void onStartTrackingTouch(SeekBar arg0) {
-				//do something
-			}
+			public void onStartTrackingTouch(SeekBar arg0) {}
 
 			public void onStopTrackingTouch(SeekBar seekBar) {
+				viewModel.sendModeVal();
 				viewModel.sendFixedIntVal();
 			}
 		});
@@ -268,7 +271,11 @@ public class DetourneActivity extends AppCompatActivity implements OnTaskComplet
 		randInt.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
 			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-				viewModel.updateRandIntVal((byte)progress);
+				byte val = (byte)progress;
+				//put in loop mode if slider is left somewhere > 0, idle mode if left at 0
+				byte newMode = (val == (byte)0x00) ? (byte)0x00 : (byte)0x02;
+				viewModel.updateMode(newMode); //mode loop
+				viewModel.updateRandIntVal(val);
 			}
 
 			public void onStartTrackingTouch(SeekBar arg0) {
@@ -276,6 +283,7 @@ public class DetourneActivity extends AppCompatActivity implements OnTaskComplet
 			}
 
 			public void onStopTrackingTouch(SeekBar seekBar) {
+				viewModel.sendModeVal();
 				viewModel.sendRandomIntVal();
 			}
 		});
@@ -287,7 +295,11 @@ public class DetourneActivity extends AppCompatActivity implements OnTaskComplet
 		solarMin.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
 			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-				viewModel.updateSolarMinVal((byte)progress);
+				byte val = (byte)progress;
+				//put in loop mode if slider is left somewhere > 0, idle mode if left at 0
+				byte newMode = (val == (byte)0x00) ? (byte)0x00 : (byte)0x02;
+				viewModel.updateMode(newMode); //mode loop
+				viewModel.updateSolarMinVal(val);
 			}
 
 			public void onStartTrackingTouch(SeekBar arg0) {
@@ -295,6 +307,7 @@ public class DetourneActivity extends AppCompatActivity implements OnTaskComplet
 			}
 
 			public void onStopTrackingTouch(SeekBar seekBar) {
+				viewModel.sendModeVal();
 				viewModel.sendSolarMinVal();
 			}
 		});
@@ -306,7 +319,11 @@ public class DetourneActivity extends AppCompatActivity implements OnTaskComplet
 		rssiMin.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
 			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-				viewModel.updateRSSIMinVal((byte)progress);
+				byte val = (byte)progress;
+				//put in loop mode if slider is left somewhere > 0, idle mode if left at 0
+				byte newMode = (val == (byte)0x00) ? (byte)0x00 : (byte)0x02;
+				viewModel.updateMode(newMode); //mode loop
+				viewModel.updateRSSIMinVal(val);
 			}
 
 			public void onStartTrackingTouch(SeekBar arg0) {
@@ -314,6 +331,7 @@ public class DetourneActivity extends AppCompatActivity implements OnTaskComplet
 			}
 
 			public void onStopTrackingTouch(SeekBar seekBar) {
+				viewModel.sendModeVal();
 				viewModel.sendRSSIMinVal();
 			}
 		});
