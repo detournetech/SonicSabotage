@@ -110,6 +110,8 @@ public class DetourneViewModel extends AndroidViewModel implements DetourneManag
 	private final MutableLiveData<String> mFWFile = new MutableLiveData<>();
 	private final MutableLiveData<String> mSHA256 = new MutableLiveData<>();
 	private final MutableLiveData<Long> mFWSize = new MutableLiveData<>();
+	private final MutableLiveData<Byte> mMode = new MutableLiveData<>();
+
 
 	// Flag that holds the pressed released state of the button on the devkit. Pressed is true, Released is False
 	private final MutableLiveData<Boolean> mButtonState = new MutableLiveData<>();
@@ -154,6 +156,10 @@ public class DetourneViewModel extends AndroidViewModel implements DetourneManag
 	public LiveData<String> getSHA256String() { return mSHA256; }
 	public LiveData<Long> getFWSize() { return mFWSize; }
 	public LiveData<Boolean> getFirmwareDownloadState() { return mDownloadState; }
+	public LiveData<Byte> getMode() {
+		return mMode;
+	}
+
 
 
 	public DetourneViewModel(@NonNull final Application application) {
@@ -229,6 +235,11 @@ public class DetourneViewModel extends AndroidViewModel implements DetourneManag
 		//Log.i("updating","a fixed int val");
 	}
 
+	public void updateMode(final byte val) {
+		mMode.setValue(val);
+		//Log.i("updating","a fixed int val");
+	}
+
 	@Override
 	public void onSolarReceived(final byte val) {
 		mSolarVal.postValue(val);
@@ -263,6 +274,12 @@ public class DetourneViewModel extends AndroidViewModel implements DetourneManag
 		Log.i("sending","an RSSI min val");
 		mDetourneManager.sendByte(DetourneManager.LBS_UUID_RSSIMIN_CHAR,
 											getRSSIMinVal().getValue());
+	}
+
+	public void sendModeVal() {
+		Log.i("sending","a mode val");
+		mDetourneManager.sendByte(DetourneManager.LBS_UUID_MODE,
+				getMode().getValue());
 	}
 
 	@Override

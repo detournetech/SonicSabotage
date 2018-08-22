@@ -34,7 +34,7 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	tools:context=".BlinkyActivity"
+	tools:context=".DetourneActivity"
 	tools:ignore="ContentDescription">
 
 	<android.support.design.widget.AppBarLayout
@@ -93,7 +93,7 @@
 						app:layout_constraintLeft_toLeftOf="parent"
 						app:layout_constraintRight_toRightOf="parent"
 						app:layout_constraintTop_toTopOf="parent"
-						app:logo="@drawable/ic_radio_button_checked"
+						app:logo="@drawable/ic_buzz_icon"
 						app:title="@string/title_led_state"
 						app:titleMarginStart="@dimen/toolbar_title_margin"/>
 
@@ -148,7 +148,7 @@
 						app:layout_constraintLeft_toLeftOf="parent"
 						app:layout_constraintRight_toRightOf="parent"
 						app:layout_constraintTop_toTopOf="parent"
-						app:logo="@drawable/ic_radio_button_checked"
+						app:logo="@drawable/ic_action_name"
 						app:title="@string/title_fixedint_state"
 						app:titleMarginStart="@dimen/toolbar_title_margin"/>
 
@@ -211,7 +211,7 @@
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:logo="@drawable/ic_radio_button_checked"
+                        app:logo="@drawable/ic_rand_icon"
                         app:title="@string/title_randomint_state"
                         app:titleMarginStart="@dimen/toolbar_title_margin"/>
 
@@ -283,7 +283,7 @@
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:logo="@drawable/ic_radio_button_checked"
+                        app:logo="@drawable/ic_rssi_icon"
                         app:title="@string/title_rssithresh_state"
                         app:titleMarginStart="@dimen/toolbar_title_margin"/>
 
@@ -355,7 +355,7 @@
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:logo="@drawable/ic_radio_button_checked"
+                        app:logo="@drawable/ic_solar_icon"
                         app:title="@string/title_solarthresh_state"
                         app:titleMarginStart="@dimen/toolbar_title_margin"/>
 
@@ -434,7 +434,7 @@
 						app:layout_constraintLeft_toLeftOf="parent"
 						app:layout_constraintRight_toRightOf="parent"
 						app:layout_constraintTop_toTopOf="parent"
-						app:logo="@drawable/ic_radio_button_checked"
+						app:logo="@drawable/ic_update_icon"
 						app:title="@string/title_update_state"
 						app:titleMarginStart="@dimen/toolbar_title_margin"/>
 
