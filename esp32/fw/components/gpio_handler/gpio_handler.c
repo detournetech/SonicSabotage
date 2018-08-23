@@ -20,13 +20,13 @@ bool gpio_get_yesno()
 		if (xQueueReceive(gpio_evt_queue, &io_num, portMAX_DELAY)) {
 			//printf("GPIO[%d] intr, val: %d\n", io_num, gpio_get_level(io_num));
 			if (io_num == GPIO_BUTTON_0) {
-				printf("yesbutton\n");
+				//printf("yesbutton\n");
 				return true;
 			} else if (io_num == GPIO_BUTTON_1) {
-				printf("nobutton\n");
+				//printf("nobutton\n");
 				return false;
 			} else {
-				printf("unknown button?\n");
+				//printf("unknown button?\n");
 			}
 		}
 	}
@@ -50,6 +50,20 @@ void short_beep()
 	gpio_set_level(GPIO_OUTPUT_IO_0, 1);
 	vTaskDelay(300 / portTICK_RATE_MS);
 	gpio_set_level(GPIO_OUTPUT_IO_0, 0);
+}
+
+void gpio_white_on()
+{
+	gpio_set_level(GPIO_RED, 0);
+	gpio_set_level(GPIO_GREEN, 0);
+	gpio_set_level(GPIO_BLUE, 0);
+}
+
+void gpio_white_off()
+{
+	gpio_set_level(GPIO_RED, 1);
+	gpio_set_level(GPIO_GREEN, 1);
+	gpio_set_level(GPIO_BLUE, 1);
 }
 
 void gpio_blink_white()

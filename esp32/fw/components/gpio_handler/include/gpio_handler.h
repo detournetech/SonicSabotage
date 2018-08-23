@@ -33,6 +33,8 @@
 bool gpio_get_yesno();
 void gpio_handler_init();
 void gpio_idle_blink_task();
+void gpio_white_on();
+void gpio_white_off();
 void gpio_blink_white();
 void gpio_blink_one(int gpio_num);
 int gpio_sample_adc();

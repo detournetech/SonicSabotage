@@ -428,8 +428,10 @@ void set_device_value(uint16_t write_handle, uint8_t write_val)
 		ESP_LOGI(GATTS_TABLE_TAG, "buzz");
 		if (write_val == 0x00) {
 			gpio_set_level(GPIO_OUTPUT_IO_0, 0);
+			gpio_white_off();
 		} else if (write_val == 0x01) {
 			gpio_set_level(GPIO_OUTPUT_IO_0, 1);
+			gpio_white_on();
 		} else {
 			ESP_LOGE(GATTS_TABLE_TAG, "invalid value. need 1 or 0.");
 		}
@@ -723,7 +725,7 @@ void check_char_thresholds_task()
 			}
 		
 			if(secs % 5 == 0) {
-				gpio_blink_one(GPIO_BLUE);
+				gpio_blink_one(GPIO_GREEN);
 				ESP_LOGI(GATTS_TABLE_TAG,"solar %d rssi %d \n", solar, rssi);
 			}
 		}

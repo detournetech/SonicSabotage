@@ -95,7 +95,7 @@ void socket_server()
 	int sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 	if (sock < 0) {
 		ESP_LOGE(TAG, "socket: %d %s", sock, strerror(errno));
-		goto END;
+		return;
 	}
 
 	ESP_LOGI(TAG, "- bind");
@@ -106,7 +106,7 @@ void socket_server()
 	int rc = bind(sock, (struct sockaddr *)&server_addr, sizeof(server_addr));
 	if (rc < 0) {
 		ESP_LOGE(TAG, "bind: %d %s", rc, strerror(errno));
-		goto END;
+		return;
 	}
 
 	ESP_LOGI(TAG, "- listen");
@@ -114,7 +114,7 @@ void socket_server()
 	rc = listen(sock, 5);
 	if (rc < 0) {
 		ESP_LOGE(TAG, "listen: %d %s", rc, strerror(errno));
-		goto END;
+		return;
 	}
 
 	ESP_LOGI(TAG, "- accept");
@@ -125,7 +125,7 @@ void socket_server()
 
 	if (client_sock < 0) {
 		ESP_LOGE(TAG, "accept: %d %s", client_sock, strerror(errno));
-		goto END;
+		return;
 	}
 
 	ESP_LOGI(TAG, "- accept");
@@ -133,9 +133,6 @@ void socket_server()
 
 	ESP_LOGI(TAG, "- close");
 	close(client_sock);
-
- END:
-	vTaskDelete(NULL);
 }
 
 static esp_err_t event_handler(void *ctx, system_event_t * event)
