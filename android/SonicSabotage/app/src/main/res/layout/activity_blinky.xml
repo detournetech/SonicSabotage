@@ -462,7 +462,7 @@
 						android:layout_height="wrap_content"
 						android:paddingEnd="@dimen/activity_horizontal_margin"
 						android:paddingStart="@dimen/activity_horizontal_margin"
-						android:text="@string/fname_text"
+						android:text="@string/fname_init"
 						app:layout_constraintLeft_toLeftOf="parent"
 						app:layout_constraintTop_toBottomOf="@+id/update_text"/>
 
@@ -472,7 +472,7 @@
 						android:layout_height="wrap_content"
 						android:paddingEnd="@dimen/activity_horizontal_margin"
 						android:paddingStart="@dimen/activity_horizontal_margin"
-						android:text="@string/fnamesize_text"
+						android:text="@string/fnamesize_init"
 						app:layout_constraintLeft_toLeftOf="parent"
 						app:layout_constraintTop_toBottomOf="@+id/fname_text"/>
 
@@ -482,7 +482,7 @@
 						android:layout_height="wrap_content"
 						android:paddingEnd="@dimen/activity_horizontal_margin"
 						android:paddingStart="@dimen/activity_horizontal_margin"
-						android:text="@string/fnamesha_text"
+						android:text="@string/fnamesha_init"
 						app:layout_constraintLeft_toLeftOf="parent"
 						app:layout_constraintTop_toBottomOf="@+id/fname_size"/>
 

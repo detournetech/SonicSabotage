@@ -67,12 +67,24 @@
 	<string name="ch_button">From File</string>
 	<string name="ul_button">OTA Flash</string>
 
-	<string name="fname_text">File:</string>
-	<string name="fnamesha_text">sha256:</string>
-	<string name="fnamesize_text">Size:</string>
+	<string name="fname_init">File:</string>
+	<string name="fnamesha_init">sha256:</string>
+	<string name="fnamesize_init">Size:</string>
 
+	<string name="fname_holder">File: %1$s</string>
+	<string name="fnamesha_holder">sha256: %1$s</string>
+	<string name="fnamesize_holder">Size: %1$d</string>
 
-	<string name="downloading">Downloading, please wait...</string>
+	<string name="download_good">Download Success</string>
+	<string name="download_fail">Download Fail</string>
+	<string name="solar_reading"> %1$d%%</string>
+	<string name="rssi_reading"> %1$d%%</string>
+	<string name="fixed_int_indicator">Buzz every %1$d minutes</string>
+	<string name="rand_int_indicator">Buzz randomly %1$d times per hour</string>
+	<string name="rssi_indicator">Buzz when RSSI is below %1$d%%</string>
+	<string name="solar_indicator">Buzz when sensor is below %1$d%%</string>
+	<string name="update_processing_message">Processing, please wait…</string>
+	<string name="downloading">Downloading, please wait…</string>
 
 	<string name="location_permission_title">LOCATION PERMISSION REQUIRED</string>
 	<string name="location_permission_info">From Android 6.0 Marshmallow onwards the application requires Location permission in order to scan for Bluetooth Low Energy devices.

@@ -202,25 +202,26 @@ public class DetourneActivity extends AppCompatActivity implements OnTaskComplet
 		});
 
 		viewModel.getFileName().observe(this, fname -> {
-			fname_text.setText("File: " + fname);
+			fname_text.setText(getString(R.string.fname_holder, fname));
+
 		});
 
 		viewModel.getSHA256String().observe(this, sha -> {
-			fnamesha_text.setText("sha256: " + sha);
+			fnamesha_text.setText(getString(R.string.fnamesha_holder, sha));
 		});
 
 		viewModel.getFWSize().observe(this,mysize -> {
-			fnamesize_text.setText("Size: " + mysize);
+			fnamesize_text.setText(getString(R.string.fnamesize_holder,mysize));
 		});
 
 		viewModel.getFirmwareDownloadState().observe( this, good -> {
 			fwStatusView.setVisibility(View.VISIBLE);
 			if (good) {
-				Toast.makeText(this, "Download Success", Toast.LENGTH_SHORT).show();
+				Toast.makeText(this, R.string.download_good, Toast.LENGTH_SHORT).show();
 				fwStatusView.setColorFilter(ContextCompat.getColor(this, android.R.color.holo_green_dark),
 						PorterDuff.Mode.MULTIPLY);
 			} else {
-				Toast.makeText(this, "Download Fail", Toast.LENGTH_SHORT).show();
+				Toast.makeText(this, R.string.download_fail, Toast.LENGTH_SHORT).show();
 				fwStatusView.setColorFilter(ContextCompat.getColor(this, android.R.color.holo_red_dark),
 						PorterDuff.Mode.MULTIPLY);
 			}
@@ -235,15 +236,15 @@ public class DetourneActivity extends AppCompatActivity implements OnTaskComplet
 
 
 		viewModel.getRSSIVal().observe(this, val -> {
-			rssiValText.setText(""+ val+"%");
+			rssiValText.setText(getString(R.string.rssi_reading,val));
 		});
 
 		viewModel.getSolarVal().observe(this, val -> {
-			solarValText.setText(""+ val+"%");
+			solarValText.setText(getString(R.string.solar_reading,val));
 		});
 
 		viewModel.getFixedIntVal().observe(this, val -> {
-			fixedIntText.setText("Buzz every " + val + " minutes");
+			fixedIntText.setText(getString(R.string.fixed_int_indicator,val));
 		});
 
 		fixedInt.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -265,7 +266,7 @@ public class DetourneActivity extends AppCompatActivity implements OnTaskComplet
 		});
 
 		viewModel.getRandIntVal().observe(this, val -> {
-			randIntText.setText("Buzz randomly " + val + " times per hour");
+			randIntText.setText(getString(R.string.rand_int_indicator,val));
 		});
 
 		// connect to AP as soon as password arrives from device
@@ -295,7 +296,7 @@ public class DetourneActivity extends AppCompatActivity implements OnTaskComplet
 		});
 
 		viewModel.getSolarMinVal().observe(this, val -> {
-			solarMinText.setText("Buzz when light is below " + val + "%");
+			solarMinText.setText(getString(R.string.solar_indicator,val));
 		});
 
 		solarMin.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -319,7 +320,7 @@ public class DetourneActivity extends AppCompatActivity implements OnTaskComplet
 		});
 
 		viewModel.getRSSIMinVal().observe(this, val -> {
-			rssiMinText.setText("Buzz when RSSI is below " + val + "%");
+			rssiMinText.setText(getString(R.string.rssi_indicator,val));
 		});
 
 		rssiMin.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -411,7 +412,7 @@ public class DetourneActivity extends AppCompatActivity implements OnTaskComplet
 		switch (id) {
 			case progress_bar_type: // we set this to 0
 				pDialog = new ProgressDialog(this);
-				pDialog.setMessage("Processing file. Please wait...");
+				pDialog.setMessage(getString(R.string.update_processing_message));
 				pDialog.setIndeterminate(false);
 				pDialog.setMax(100);
 				pDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
