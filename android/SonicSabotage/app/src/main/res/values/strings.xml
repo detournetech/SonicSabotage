@@ -32,19 +32,12 @@
 	<string name="app_name">Sonic Sabotage</string>
 	<string name="feature_name">DTC</string>
 
-	<string name="title">@string/app_name</string>
+	<string name="title">Sonic Sabotage</string>
 
 	<string name="unknown_device">Unknown Device</string>
 	<string name="turn_on">On</string>
 	<string name="turn_off">Off</string>
 	<string name="title_led_state">Buzz</string>
-	<string name="title_button_state">Button</string>
-	<string name="state">State</string>
-	<string name="button_pressed">PRESSED</string>
-	<string name="button_released">RELEASED</string>
-	<string name="button_unknown">UNKNOWN</string>
-	<string name="led_summary"></string>
-	<string name="button_summary"></string>
 
 	<string name="fixedint_summary">Buzz periodically</string>
 	<string name="title_fixedint_state">Fixed Interval</string>
