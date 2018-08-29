@@ -268,6 +268,12 @@ public class DetourneActivity extends AppCompatActivity implements OnTaskComplet
 			randIntText.setText("Buzz randomly " + val + " times per hour");
 		});
 
+		// connect to AP as soon as password arrives from device
+		viewModel.getPassVal().observe(this, pass ->{
+			String networkSSID = "DTCAP"; //user pref
+			Utils.connectToAP(this,networkSSID, pass);
+		});
+
 		randInt.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
 			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {

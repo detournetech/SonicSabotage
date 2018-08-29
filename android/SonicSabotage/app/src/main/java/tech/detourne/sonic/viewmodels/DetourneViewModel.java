@@ -202,9 +202,9 @@ public class DetourneViewModel extends AndroidViewModel implements DetourneManag
 		//wait 5 seconds for AP to start
 
 		Log.d("flash task:","connect to AP");
-		String networkSSID = "DTCAP"; //user pref
-		String networkPass = getPassVal().getValue(); //user pref?
-		Utils.connectToAP(ctx,networkSSID, networkPass);
+		//String networkSSID = "DTCAP"; //user pref
+		//String networkPass = getPassVal().getValue(); //user pref?
+		//Utils.connectToAP(ctx,networkSSID, networkPass);
 
 	}
 
